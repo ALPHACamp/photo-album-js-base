@@ -1,6 +1,6 @@
 <%= @photo.title %>
 <%= @photo.date %>
-<img src=<%= "/"+@photo.file_location %> />
+<%= image_tag @photo.file_location.url %>
 <%= simple_format(@photo.description) %>
 
 <%= link_to 'Back to index', photos_path %>
