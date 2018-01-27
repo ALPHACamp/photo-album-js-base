@@ -1,0 +1,24 @@
+<h1>All User</h1>
+
+<table class="table">
+  <tr>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Region</th>
+    <th>Phone</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= image_tag user.avatar if user.avatar? %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.gender %></td>
+      <td><%= user.age %></td>
+      <td><%= user.region %></td>
+      <td><%= user.phone %></td>
+    </tr>
+  <% end %>
+</table>
