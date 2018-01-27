@@ -21,6 +21,31 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <h3>Profile</h3>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    <div>
+    <div class="field">
+      <%= f.label :gender %>
+      <%= f.select :gender, ['male', 'female', 'other'] %>
+    <div>
+    <div class="field">
+      <%= f.label :age %>
+      <%= f.number_field :age %>
+    <div>
+    <div class="field">
+      <%= f.label :region %>
+      <%= f.text_field :region %>
+    <div>
+    <div class="field">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    <div>
+  </div>
+
+  <br>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
