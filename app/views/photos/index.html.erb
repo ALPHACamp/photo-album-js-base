@@ -1,12 +1,12 @@
-<ul>
+<table class="table table-striped table-condensed">
   <% @photos.each do |photo| %>
-    <li>
-      <%= photo.title %>
-      <%= link_to 'Show', photo_path(photo) %>
-      <%= link_to 'Edit', edit_photo_path(photo) %>
-      <%= link_to 'Destroy', photo_path(photo), method: :delete, data:{ confirm: "Are you sure?" } %>
-    </li>
+    <tr>
+      <td><%= photo.title %></td>
+      <td><%= link_to 'Show', photo_path(photo) %></td>
+      <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+      <td><%= link_to 'Destroy', photo_path(photo), method: :delete, data:{ confirm: "Are you sure?" } %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
 
 <%= link_to 'New Photo', new_photo_path %>
