@@ -9,9 +9,11 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-    @photo.save
-
-    redirect_to photos_path
+    if @photo.save
+      redirect_to photos_path
+    else
+      render :action => :new
+    end
   end
 
   def show
@@ -24,9 +26,11 @@ class PhotosController < ApplicationController
 
   def update
     @photo = Photo.find(params[:id])
-    @photo.update(photo_params)
-
-    redirect_to photo_path(@photo)
+    if @photo.update(photo_params)
+      redirect_to photo_path(@photo)
+    else
+      render :action => :edit
+    end
   end
 
   def destroy
