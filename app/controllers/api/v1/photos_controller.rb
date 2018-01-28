@@ -46,6 +46,21 @@ class Api::V1::PhotosController < ApiController
     end
   end
 
+  # PATCH http://localhost:3000/api/v1/photos/:id
+  def update
+    @photo = Photo.find_by(id: params[:id])
+    if @photo.update(photo_params)
+      render json: {
+        message: "Photo updated successfully!",
+        result: @photo
+      }
+    else
+      render json: {
+        errors: @photo.errors
+      }
+    end
+  end
+
   private
 
   def photo_params
