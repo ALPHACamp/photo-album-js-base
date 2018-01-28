@@ -42,6 +42,9 @@
 
         </div><!-- /.container-fluid -->
       </nav>
+      <% if current_user %>
+        <p class="pull-right">你的 API Token：<code><%= current_user.authentication_token  %></code></p>
+      <% end %>
 
       <% if flash[:notice] %>
         <div class="alert alert-success" role="alert"><%= notice %></div>
