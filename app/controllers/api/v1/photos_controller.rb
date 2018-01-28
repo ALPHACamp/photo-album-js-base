@@ -61,6 +61,15 @@ class Api::V1::PhotosController < ApiController
     end
   end
 
+  # DELETE http://localhost:3000/api/v1/photos/:id
+  def destroy
+    @photo = Photo.find_by(id: params[:id])
+    @photo.destroy
+    render json: {
+      message: "Photo destroy successfully!"
+    }
+  end
+
   private
 
   def photo_params
