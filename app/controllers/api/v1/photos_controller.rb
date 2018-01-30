@@ -1,4 +1,5 @@
 class Api::V1::PhotosController < ApiController
+  before_action :authenticate_user!, except: :index
 
   # GET http://localhost:3000/api/v1/photos
   def index

@@ -30,18 +30,21 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <% if current_user %>
-              <li><p class="navbar-text">Hi, <%= current_user.email %></p></li>
-              <li><%= link_to('Log out', destroy_user_session_path, method: :delete) %></li>
-              <li><%= link_to('Edit Profile', edit_user_registration_path) %></li>
+                <li><p class="navbar-text">Hi, <%= current_user.email %></p></li>
+                <li><%= link_to('Log out', destroy_user_session_path, method: :delete) %></li>
+                <li><%= link_to('Edit Profile', edit_user_registration_path) %></li>
               <% else %>
-              <li><%= link_to('Sign up', new_user_registration_path) %></li>
-              <li><%= link_to('Log in', new_user_session_path) %></li>
-              <% end %>
+                <li><%= link_to('Sign up', new_user_registration_path) %></li>
+                <li><%= link_to('Log in', new_user_session_path) %></li>
+                <% end %>
             </ul>
           </div>
 
         </div><!-- /.container-fluid -->
       </nav>
+      <% if current_user %>
+        <p class="pull-right">你的 API Token：<code><%= current_user.authentication_token  %></code></p>
+      <% end %>
 
       <% if flash[:notice] %>
         <div class="alert alert-success" role="alert"><%= notice %></div>
