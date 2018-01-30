@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'carrierwave'
 gem 'devise'
+gem 'rest-client'
 
 group :production do
   gem 'pg'
