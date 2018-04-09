@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       post "/logout" => "auth#logout"
 
       resources :photos, only: [:index, :create, :show, :update, :destroy]
+      resources :users, only: :index
     end
   end
 
