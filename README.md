@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+GET /api/v1/photos
+GET /api/v1/photos/:id?auth_token="yourtoken"
+POST /api/v1/photos?auth_token="yourtoken"
+PATCH /api/v1/photos/:id?auth_token="yourtoken"
+DELETE /api/v1/photos/:id?auth_token="yourtoken"
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+POST /api/v1/signup?email="youremail"&password="yourpassword"
+POST /api/v1/login?email="youremail"&password="yourpassword"
+POST /api/v1/logout?auth_token="yourtoken"
+```
